@@ -6,25 +6,9 @@ import {
   useLocation,
 } from "react-router-dom";
 import { accessToken, logout } from "./spotify";
-import { Login, Profile, TopArtists, TopTracks } from "./pages";
+import { Login, Profile, TopArtists, TopTracks, Playlists } from "./pages";
 import { GlobalStyle } from "./styles";
-import styled from "styled-components/macro";
-
-const StyledLogoutButton = styled.button`
-  position: absolute;
-  top: var(--spacing-sm);
-  right: var(--spacing-md);
-  padding: var(--spacing-xs) var(--spacing-sm);
-  background-color: rgba(0, 0, 0, 0.7);
-  color: var(--white);
-  font-size: var(--fz-sm);
-  font-weight: 700;
-  border-radius: var(--border-radius-pill);
-  z-index: 10;
-  @media (min-width: 768px) {
-    right: var(--spacing-lg);
-  }
-`;
+import { StyledLogoutButton } from "./components";
 
 // Scroll to top of page when changing routes
 // https://reactrouter.com/web/guides/scroll-restoration/scroll-to-top
@@ -69,7 +53,7 @@ function App() {
                 <h1>Playlist</h1>
               </Route>
               <Route path="/playlists">
-                <h1>Playlists</h1>
+                <Playlists />
               </Route>
               <Route path="/">
                 <Profile />
