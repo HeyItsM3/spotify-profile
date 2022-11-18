@@ -22,12 +22,11 @@ app.use(express.static(path.resolve(__dirname, "./client/build")));
  * @param  {number} length The length of the string
  * @return {string} The generated string
  */
-const generateRandomString = function (length) {
-  var text = "";
-  var possible =
+const generateRandomString = (length) => {
+  let text = "";
+  const possible =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-  for (var i = 0; i < length; i++) {
+  for (let i = 0; i < length; i++) {
     text += possible.charAt(Math.floor(Math.random() * possible.length));
   }
   return text;
@@ -83,7 +82,7 @@ app.get("/callback", (req, res) => {
           expires_in,
         });
 
-        res.redirect(`http://${FRONTEND_URI}?${queryParams}`);
+        res.redirect(`${FRONTEND_URI}/?${queryParams}`);
       } else {
         res.redirect(`/?${querystring.stringify({ error: "invalid_token" })}`);
       }
