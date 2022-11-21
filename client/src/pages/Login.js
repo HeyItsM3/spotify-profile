@@ -1,4 +1,5 @@
 import styled from "styled-components/macro";
+import logo from "../img/logospot.png";
 
 const StyledLoginContainer = styled.main`
   display: flex;
@@ -24,6 +25,11 @@ const StyledLoginButton = styled.a`
   }
 `;
 
+const ImageLogin = styled.img`
+  max-width: 150px;
+  padding-bottom: 1rem;
+`;
+
 const LOGIN_URI =
   process.env.NODE_ENV !== "production"
     ? "http://localhost:8888/login"
@@ -31,6 +37,7 @@ const LOGIN_URI =
 
 const Login = () => (
   <StyledLoginContainer>
+    <ImageLogin src={logo} />
     <StyledLoginButton href={LOGIN_URI}>Log in to Spotify</StyledLoginButton>
   </StyledLoginContainer>
 );
