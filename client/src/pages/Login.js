@@ -33,7 +33,7 @@ const ImageLogin = styled.img`
 const LOGIN_URI =
   process.env.NODE_ENV !== "production"
     ? "http://localhost:8888/login"
-    : "https://profile-spotify-app.herokuapp.com/login";
+    : "https://web-production-b4af.up.railway.app/login";
 
 const Login = () => (
   <StyledLoginContainer>
